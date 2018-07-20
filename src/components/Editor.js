@@ -7,6 +7,7 @@ import Chip from '@material-ui/core/Chip';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import 'draft-js/dist/Draft.css'
 
+// define rendering styles
 const styles = {
   root: {
     fontFamily: '\'Helvetica\', sans-serif',
@@ -55,7 +56,7 @@ const styles = {
 
 //find online regex tester beforehand
 const CUSTOM_REGEX =
-  {
+  { //regular expression to match {{ ... }}
     regex: /(?:{{){1}[^{}]*(?:}}){1}/g,
     type: 'custom',
   }
@@ -100,7 +101,8 @@ class HtmlEditor extends Component {
     this.onChange = (editorState) => this.setState({ editorState });
     //this.onContentChange = (contentState) => this.setState({contentState});
   }
-
+ 
+  //multiple decorator allowed here
   compositeDecorator = () => {
     return (
       [
@@ -162,7 +164,6 @@ class HtmlEditor extends Component {
 
   // a lot more command handling logics go here
   handleKeyCommand = (command, editorState) => {
-
     // disable delete
     if ( command === 'backspace') {
       const selectionState = editorState.getSelection();
@@ -187,6 +188,7 @@ class HtmlEditor extends Component {
 
   handleCopy = (e) => {
     e.clipboardData.setData('text', getSelectionText(this.state.editorState) )
+    // prevent default behavior which prevent many features of the editor
     e.preventDefault()
   }
 
@@ -195,12 +197,17 @@ class HtmlEditor extends Component {
     console.log('render',convertToRaw(this.state.editorState.getCurrentContent()))
     console.log('selection',this.state.editorState.getSelection())
     return (
+      // Editor will not receive the onCopy and onPaste event
       <div onCopy={this.handleCopy} onPaste={this.handlePaste}>
         <Editor
           //stripPastedStyles={false}
+          //handle key or key combinations 
           handleKeyCommand={this.handleKeyCommand}
+          //override default behavior of keyboard event
           handleBeforeInput={this.handleBeforeInput}
+          //override default behavior of drop event
           handleDrop={(...props) => this.handleDrop(...props)}
+          //Decorator is used to define how to render text
           customDecorators={this.compositeDecorator()}
           editorState={editorState}
           onEditorStateChange={this.onChange}
