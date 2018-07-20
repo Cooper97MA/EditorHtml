@@ -24,3 +24,5 @@ It will start express server on development mode and you can open `http://localh
 ### Useful reference
  `draftjs-utils`: provides useful functions on get current block.   
  `draftjs`: provides most of the function.
+ ### Demo
+ 
