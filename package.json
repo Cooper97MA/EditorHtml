@@ -1,0 +1,23 @@
+{
+  "name": "editor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "html-react-parser": "^0.4.6",
+    "material-ui": "^0.20.1",
+    "draft-js": "^0.10.5",
+    "react-draft-wysiwyg": "^1.12.13",
+    "draftjs-utils": "^0.9.4",
+    "@material-ui/core": "^1.4.0"
+
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
