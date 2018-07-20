@@ -17,6 +17,9 @@ It will start express server on development mode and you can open `http://localh
   Through this readme file, some experience on how to use predefined functions is given.  
   In the file `src/components/DraggableWord.js`, onDragStart function is used, which set the data of what is being transferred here. The Chip is from materail-ui and doesnot need to be used here. file `Template.js` include some packages for drag and drop, it is not used.  
   The file `Editor.js` is where manipulating pured on text patterns happens and the file `HtmlEditor.js` tries to mentain entity map.  
+
+### Another implemetation
+   
 ### Pitfalls
   manipulation on text is default on current block, but if you want to get current block inside some function without this parameter, check `draftjs-utils`.
   use `get selection`to get the cursor position 
