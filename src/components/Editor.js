@@ -63,7 +63,7 @@ const CUSTOM_REGEX =
 
 const customStrategy = (contentBlock, callback, contentState) => {
   // console.log not removed to provide function on how to get text
-  console.log(contentState.getBlockForKey(contentBlock.key).getText())
+  //console.log(contentState.getBlockForKey(contentBlock.key).getText())
   return findWithRegex(CUSTOM_REGEX, contentBlock, callback, contentState);
 }
 
