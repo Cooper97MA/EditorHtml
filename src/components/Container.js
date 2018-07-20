@@ -1,8 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles/index';
-import blue from '@material-ui/core/colors/blue';
-import grey from '@material-ui/core/colors/grey';
-import green from '@material-ui/core/colors/grey';
 import Grid from '@material-ui/core/Grid';
 import HtmlEditor from './Editor';
 import Template from './Template'
